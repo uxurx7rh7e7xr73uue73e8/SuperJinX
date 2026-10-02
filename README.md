@@ -1,3 +1,5 @@
+کد نویسی شده توسط تیم پمپ نت
+
 <div align="center">
 
 <img src="banner.svg" width="100%" alt="Super JinX Panel">
@@ -101,7 +103,7 @@ flowchart LR
 <a id="intro"></a>
 ## <img src="ic-intro.svg" width="30" align="center"> &nbsp;معرفی
 
-**Super JinX** یک پنل نمایندگی کامل و آماده‌ی فروشه که روی [PasarGuard](https://github.com/PasarGuard/panel) ساخته شده. پنل، هسته‌ی Xray و وب‌سرور همه داخل **یک سرویس** روی Railway اجرا میشن و همه‌ی تنظیمات **خودکار** انجام میشه: اینباندها، هاست‌ها، گروه‌ها، قالب‌های فروش، نقش نماینده و صفحه‌ی اشتراک.
+**Super JinX** یک پنل نمایندگی کامل و آماده‌ی فروشه که روی [https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/] ساخته شده. پنل، هسته‌ی Xray و وب‌سرور همه داخل **یک سرویس** روی Railway اجرا میشن و همه‌ی تنظیمات **خودکار** انجام میشه: اینباندها، هاست‌ها، گروه‌ها، قالب‌های فروش، نقش نماینده و صفحه‌ی اشتراک.
 
 <a id="why"></a>
 ### <img src="ic-why.svg" width="24" align="center"> &nbsp;چرا Super JinX؟
@@ -578,7 +580,7 @@ flowchart LR
 | `Incorrect username or password` | یک دقیقه صبر کن تا سرویس کامل بالا بیاد |
 | پینگ قرمز ولی وصل میشه | تست TCP رو کنار بذار و از **Real Delay** استفاده کن |
 
-راهنمای کامل: [TROUBLESHOOTING.md](TROUBLESHOOTING.md) · سوال‌های رایج: [FAQ.md](FAQ.md)
+راهنمای کامل: [https://t.me/PompNett) · سوال‌های رایج: [https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/)
 
 <br>
 
@@ -643,7 +645,7 @@ flowchart LR
 
 <br>
 
-**Super JinX** is a free, ready-to-sell reseller panel built on [PasarGuard](https://github.com/PasarGuard/panel). The panel, the Xray core and nginx run in **one Railway service**, and everything is configured automatically: inbounds, hosts, groups, sales templates, reseller role and a custom subscription page.
+**Super JinX** is a free, ready-to-sell reseller panel built on [PasarGuard](https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/). The panel, the Xray core and nginx run in **one Railway service**, and everything is configured automatically: inbounds, hosts, groups, sales templates, reseller role and a custom subscription page.
 
 - **Install:** Fork → Railway *Deploy from GitHub repo* → attach a Volume at `/var/lib/pasarguard` → Generate Domain on port `8080` → Region *EU West* → Redeploy
 - **First login:** `admin` / `admin` at `https://YOUR-DOMAIN/dashboard/`, then change it in *Settings → Change password*
@@ -661,11 +663,11 @@ flowchart LR
 
 | فایل | محتوا |
 |---|---|
-| [INSTALL.md](INSTALL.md) | نصب قدم‌به‌قدم |
-| [FAQ.md](FAQ.md) | سوال‌های رایج: پینگ، رمز، نماینده |
-| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | حل خطاهای Railway |
-| [SECURITY.md](SECURITY.md) | نکات امنیتی |
-| [CHANGELOG.md](CHANGELOG.md) | تغییرات هر نسخه |
+| [INSTALL.md](https://t.me/PompNett) | نصب قدم‌به‌قدم |
+| [FAQ.md](https://t.me/PompNett) | سوال‌های رایج: پینگ، رمز، نماینده |
+| [TROUBLESHOOTING.md](https://t.me/PompNett) | حل خطاهای Railway |
+| [SECURITY.md](https://t.me/PompNett) | نکات امنیتی |
+| [CHANGELOG.md](https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/) | تغییرات هر نسخه |
 | [env.example](env.example) | نمونه‌ی متغیرها |
 
 <br>
@@ -679,7 +681,7 @@ flowchart LR
 
 <h3>X4G &nbsp;×&nbsp; 𝗝𝗶𝗻𝗫</h3>
 
-این پروژه با همکاری **X4G** و **𝗝𝗶𝗻𝗫** طراحی، ساخته و منتشر شده.
+این پروژه با همکاری **Pomp Net** و **𝗝𝗶𝗻𝗫** طراحی، ساخته و منتشر شده.
 
 </div>
 
@@ -692,8 +694,11 @@ flowchart LR
 
 <a href="https://t.me/+WvKFv0lU_i5lNGE0"><img src="https://img.shields.io/badge/Join-%D8%AC%DB%8C%D9%86%DA%A9%D8%B3%20%7C%20Super%20JinX-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Join Channel"></a>
 
-آپدیت‌ها، آموزش‌ها و پشتیبانی فقط از طریق کانال رسمی<br>
-**[جینکس | 𝙎𝙪𝙥𝙚𝙧 𝗝𝗶𝗻𝗫](https://t.me/+WvKFv0lU_i5lNGE0)**
+آپدیت‌ها، آموزش‌ها و پشتیبانی فقط از طریق کانال (
+https://t.me/pompnet)
+
+و گپ مجموعه پمپ نت:(
+https://t.me/PompNett)
 
 اگه این پروژه به کارت اومد، با یک **Star** حمایتش کن.
 
@@ -703,8 +708,9 @@ flowchart LR
 
 ## <img src="ic-license.svg" width="30" align="center"> &nbsp;مجوز و قدردانی
 
-- استفاده و نصب **رایگانه**. تغییر نام، فروش یا انتشار دوباره‌ی این پروژه به اسم خودتون مجاز نیست. جزئیات در [LICENSE](LICENSE).
-- ساخته‌شده بر پایه‌ی [PasarGuard Panel](https://github.com/PasarGuard/panel) و [PasarGuard Node](https://github.com/PasarGuard/node) و هسته‌ی [Xray-core](https://github.com/XTLS/Xray-core)؛ مجوز هر کدوم در ریپوی خودشون.
+- استفاده و نصب **رایگانه**. تغییر نام، فروش یا انتشار دوباره‌ی این پروژه به اسم خودتون مجاز نیست. جزئیات د(https://t.me/pompnet)
+- ساخته‌شده بر پایه‌ی [Pomp Net Panel]
+- (https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/) و [Pomp Net Node](https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/) و هسته‌ی [Xray-core](https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/)؛ مجوز هر کدوم در ریپوی خودشون.
 
 <br>
 
@@ -715,3 +721,18 @@ flowchart LR
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:22d3ee,50:5b6cff,100:a855f7&height=110&section=footer" width="100%" alt="">
 
 </div>
+
+صفه رسمی گیت هاب مجموعه پمپ نت :
+
+
+(https://github.com/uxurx7rh7e7xr73uue73e8?tab=repositories.github.io/Amnezia-Wg/)
+
+لینک گپ مجموعه :
+
+(https://t.me/PompNett)
+
+
+لینک کانال رسمی و اطلاعیه ها : 
+
+
+https://t.me/pompnet
