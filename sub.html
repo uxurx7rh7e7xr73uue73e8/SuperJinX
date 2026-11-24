@@ -712,7 +712,10 @@ if(document.readyState==="complete")setTimeout(start,500);else{var go=false,s1=f
  var scenes=[
   ["abyss","اقیانوس ژرف"],["volcano","آتشفشان"],["galaxy","کهکشان"],["aurora","شفق قطبی"],
   ["rainforest","جنگل بارانی"],["ice","کوهستان یخی"],["island","جزیره استوایی"],["storm","طوفان دریایی"],
-  ["meteor","شهاب‌باران"],["underwater","شهر زیر آب"],["desert","غروب کویر"],["nebula","سحابی بنفش"]
+  ["meteor","شهاب‌باران"],["underwater","شهر زیر آب"],["desert","غروب کویر"],["nebula","سحابی بنفش"],
+  ["canyon","دره‌های سرخ"],["crystal","غار کریستالی"],["moonbase","پایگاه ماه"],["fireflies","جنگل شب‌تاب"],
+  ["coral","باغ مرجانی"],["skycity","شهر شناور"],["glacier","یخچال قطبی"],["sakura","باغ شکوفه‌ها"],
+  ["thunder","رعدوبرق"],["clouds","اقیانوس ابرها"],["lavafield","دریای گدازه"],["starship","ایستگاه فضایی"]
  ];
  function pick(){
   var bag=[],last="";
@@ -746,7 +749,7 @@ if(document.readyState==="complete")setTimeout(start,500);else{var go=false,s1=f
  var ctx=cv.getContext("2d"),w=0,h=0,dpr=Math.min(1.4,devicePixelRatio||1),t=0,last=0,parts=[];
  function resize(){w=innerWidth;h=innerHeight;cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);parts=[];for(var i=0;i<95;i++)parts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+.35,v:Math.random()*.65+.12,a:Math.random()*.5+.12,p:Math.random()*6.28})}
  addEventListener("resize",resize,{passive:true});resize();
- var palettes={abyss:["#020714","#063c59","#16b9d2"],volcano:["#10060c","#542018","#ff692e"],galaxy:["#07051c","#25104c","#7852d6"],aurora:["#04131b","#064b55","#4ee6c4"],rainforest:["#04120d","#12432e","#62a878"],ice:["#061326","#16436b","#9be8ff"],island:["#03202b","#087c8b","#4de0ce"],storm:["#070b19","#1b3151","#5687b8"],meteor:["#070718","#1e1a50","#8f75ff"],underwater:["#02151e","#034a62","#20d6dc"],desert:["#1a0d18","#7a3440","#ffad65"],nebula:["#09051b","#35145c","#a55cff"]};
+ var palettes={abyss:["#020714","#063c59","#16b9d2"],volcano:["#10060c","#542018","#ff692e"],galaxy:["#07051c","#25104c","#7852d6"],aurora:["#04131b","#064b55","#4ee6c4"],rainforest:["#04120d","#12432e","#62a878"],ice:["#061326","#16436b","#9be8ff"],island:["#03202b","#087c8b","#4de0ce"],storm:["#070b19","#1b3151","#5687b8"],meteor:["#070718","#1e1a50","#8f75ff"],underwater:["#02151e","#034a62","#20d6dc"],desert:["#1a0d18","#7a3440","#ffad65"],nebula:["#09051b","#35145c","#a55cff"],canyon:["#170b12","#6b2930","#e88753"],crystal:["#080d24","#263c78","#a4d8ff"],moonbase:["#090d1b","#35415f","#9aa9d0"],fireflies:["#04150f","#14553c","#b2ed73"],coral:["#031c2b","#075c72","#4ad6cf"],skycity:["#090b26","#263d70","#9a8bff"],glacier:["#061b2b","#246080","#c7f4ff"],sakura:["#100b22","#514071","#c6b4ff"],thunder:["#050914","#192d4b","#8ab5e8"],clouds:["#0b1530","#45628a","#b8d9ed"],lavafield:["#170708","#6b1e13","#ff7a26"],starship:["#050715","#202052","#7c8bff"]};
  function frame(now){requestAnimationFrame(frame);if(document.hidden||reduce)return;if(now-last<38)return;last=now;t+=.016;
   var p=palettes[scene.id]||palettes.abyss,g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,p[0]);g.addColorStop(.62,p[1]);g.addColorStop(1,p[2]);ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
   var glow=ctx.createRadialGradient(w*.72,h*.42,2,w*.72,h*.42,Math.max(w,h)*.7);glow.addColorStop(0,p[2]+"55");glow.addColorStop(1,"transparent");ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
@@ -755,7 +758,14 @@ if(document.readyState==="complete")setTimeout(start,500);else{var go=false,s1=f
   }
   if(scene.id==="volcano"){ctx.fillStyle="#170d18";ctx.beginPath();ctx.moveTo(w*.18,h);ctx.lineTo(w*.48,h*.34);ctx.lineTo(w*.56,h*.49);ctx.lineTo(w*.67,h);ctx.fill();ctx.strokeStyle="#ff6b35";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(w*.48,h*.35);ctx.lineTo(w*.52,h*.44);ctx.stroke()}
   if(scene.id==="ice"||scene.id==="desert"){ctx.fillStyle=scene.id==="ice"?"#b4eaff22":"#ffb16b22";ctx.beginPath();ctx.moveTo(0,h);for(var z=0;z<=w;z+=w/8)ctx.lineTo(z,h*(.72+Math.sin(z*.014)*.08));ctx.lineTo(w,h);ctx.fill()}
-  for(var i=0;i<parts.length;i++){var a=parts[i];a.y+=a.v*(scene.id==="rainforest"||scene.id==="storm"?2.8:1);a.x+=scene.id==="storm"?-a.v*.8:Math.sin(t+a.p)*.18;if(a.y>h+5){a.y=-5;a.x=Math.random()*w}ctx.globalAlpha=a.a*(.6+.4*Math.sin(t*2+a.p));ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,6.283);ctx.fillStyle=(scene.id==="volcano"?"#ffb36b":scene.id==="ice"?"#d8f7ff":"#e4e2ff");ctx.fill()}
+  if(["canyon","glacier","lavafield"].indexOf(scene.id)>=0){ctx.fillStyle=scene.id==="glacier"?"#bceeff33":"#160b18";ctx.beginPath();ctx.moveTo(0,h);for(var m=0;m<=8;m++){var mx=w*m/8;ctx.lineTo(mx,h*(.48+Math.sin(m*2.1+t*.12)*.13))}ctx.lineTo(w,h);ctx.fill();if(scene.id==="lavafield"){ctx.strokeStyle="#ff6b32";ctx.lineWidth=2;for(var f=0;f<7;f++){ctx.beginPath();ctx.moveTo(w*f/7,h*.82);ctx.lineTo(w*(f+.4)/7,h*.96);ctx.stroke()}}}
+  if(scene.id==="crystal"){for(var c=0;c<9;c++){var cx=w*(.08+c*.105),ch=h*(.16+((c*7)%5)*.07);ctx.beginPath();ctx.moveTo(cx,h);ctx.lineTo(cx+ch*.16,h-ch);ctx.lineTo(cx+ch*.32,h);ctx.closePath();ctx.fillStyle=c%2?"#a8dcff35":"#8c8aff45";ctx.fill()}}
+  if(["moonbase","skycity","starship"].indexOf(scene.id)>=0){ctx.fillStyle="#080b1c";for(var b=0;b<18;b++){var bw=w/22,bh=h*(.08+((b*13)%9)*.025);ctx.fillRect(b*w/18,h-bh,bw,bh)}ctx.fillStyle="#9ebaff66";for(var q2=0;q2<18;q2++)ctx.fillRect(q2*w/18+4,h-h*(.08+((q2*13)%9)*.025)+8,3,3);if(scene.id==="starship"){ctx.strokeStyle="#a9c8ff";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(w*.18,h*.38);ctx.lineTo(w*.38,h*.34);ctx.lineTo(w*.55,h*.38);ctx.stroke()}}
+  if(scene.id==="thunder"&&Math.random()<.035){ctx.strokeStyle="#d9eaff";ctx.lineWidth=3;ctx.beginPath();var lx=Math.random()*w;ctx.moveTo(lx,0);for(var ly=0;ly<h*.62;ly+=h*.1)ctx.lineTo(lx+(Math.random()-.5)*70,ly+h*.1);ctx.stroke()}
+  if(scene.id==="clouds"){ctx.fillStyle="#d4e8ff20";for(var cl=0;cl<8;cl++){ctx.beginPath();ctx.ellipse((cl*w/6+t*9)%(w+180)-90,h*(.22+(cl%3)*.13),65,18,0,0,6.283);ctx.fill()}}
+  if(scene.id==="coral"){ctx.strokeStyle="#64e2d588";ctx.lineWidth=5;for(var cr=0;cr<7;cr++){var bx=w*(.08+cr*.14);ctx.beginPath();ctx.moveTo(bx,h);ctx.lineTo(bx,h*.78);ctx.lineTo(bx-18,h*.68);ctx.moveTo(bx,h*.82);ctx.lineTo(bx+18,h*.7);ctx.stroke()}}
+  if(scene.id==="sakura"){ctx.fillStyle="#d8caff55";for(var sk=0;sk<5;sk++){ctx.beginPath();ctx.arc(w*(.12+sk*.2),h*(.2+(sk%2)*.08),18,0,6.283);ctx.fill()}}
+  for(var i=0;i<parts.length;i++){var a=parts[i];a.y+=a.v*(scene.id==="rainforest"||scene.id==="storm"?2.8:1);a.x+=scene.id==="storm"?-a.v*.8:Math.sin(t+a.p)*.18;if(a.y>h+5){a.y=-5;a.x=Math.random()*w}ctx.globalAlpha=a.a*(.6+.4*Math.sin(t*2+a.p));ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,6.283);ctx.fillStyle=(scene.id==="volcano"||scene.id==="lavafield"?"#ffb36b":scene.id==="ice"||scene.id==="glacier"?"#d8f7ff":scene.id==="fireflies"?"#baff72":scene.id==="sakura"?"#d7c8ff":scene.id==="coral"?"#75f4e3":"#e4e2ff");ctx.fill()}
   ctx.globalAlpha=1;
  }
  if(!reduce)requestAnimationFrame(frame);else{ctx.fillStyle="#080817";ctx.fillRect(0,0,w,h)}
