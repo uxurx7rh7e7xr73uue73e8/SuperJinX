@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#07080f">
 <meta name="robots" content="noindex,nofollow">
-<title>Super JinX</title>
+<title>POMP NET | OCEAN NEXUS · همکاری Super JinX</title>
 <script id="jx-data" type="application/json">{{ {
   "username": (user.username|string),
   "status": (user.status.value if user.status.value is defined else user.status|string),
@@ -219,7 +219,7 @@ html[dir=rtl] .fl{transform:scaleX(-1)}
 </head>
 <body>
 <div class="aur"></div><canvas id="fx" aria-hidden="true"></canvas>
-<div class="splash" id="splash"><div><div class="sl"><svg width="36" height="36" viewBox="0 0 24 24"><use href="#i-bolt2"/></svg></div><b>SUPER JINX</b></div></div>
+<div class="splash" id="splash"><div><div class="sl"><svg width="36" height="36" viewBox="0 0 24 24"><use href="#i-bolt2"/></svg></div><b>POMP NET</b></div></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#4f7bff"/><stop offset="1" stop-color="#c084fc"/></linearGradient>
@@ -252,13 +252,13 @@ html[dir=rtl] .fl{transform:scaleX(-1)}
 
 <main class="wrap">
   <div class="top rv">
-    <div class="brand"><div class="mk"><svg width="22" height="22"><use href="#i-bolt2"/></svg></div><div class="bn"><b>Super JinX</b><span data-t="tag"></span></div></div>
+    <div class="brand"><div class="mk"><svg width="22" height="22"><use href="#i-bolt2"/></svg></div><div class="bn"><b>POMP NET</b><span data-t="tag"></span></div></div>
     <div class="seg" id="seg"><i id="segI"></i><button type="button" data-l="fa">FA</button><button type="button" data-l="en">EN</button></div>
   </div>
 
   <div class="passw rv"><div class="pass" id="pass">
     <div class="dots"></div>
-    <div class="pr"><div class="t">JINX PASS<b id="plan">PREMIUM</b></div><span class="badge" id="st"><i></i><span id="stT"></span></span></div>
+    <div class="pr"><div class="t">POMP NET PASS<b id="plan">OCEAN PREMIUM</b></div><span class="badge" id="st"><i></i><span id="stT"></span></span></div>
     <div class="emb">
       <div class="seal"><span class="sr"></span><span class="sc"><svg width="22" height="22"><use href="#i-bolt2"/></svg></span></div>
       <div class="sx"><b><svg width="12" height="12"><use href="#i-lock"/></svg>ENCRYPTED</b><span>TLS · 443 · <span id="pNet" style="display:inline;margin:0">0 CONFIGS</span></span></div>
@@ -319,7 +319,7 @@ html[dir=rtl] .fl{transform:scaleX(-1)}
     <div><b data-t="tgT"></b><small data-t="tgS"></small></div>
     <svg class="go fl" width="20" height="20"><use href="#i-arrow"/></svg>
   </a>
-  <div class="foot rv">Powered by <b>Super JinX</b> · X4G × 𝗝𝗶𝗻𝗫</div>
+  <div class="foot rv">طراحی POMP NET MOHAMMAD · با همکاری Super JinX</div>
 </main>
 
 <div class="dock" id="dock"><a class="btn" id="quick" href="#"><svg width="18" height="18"><use href="#i-bolt2"/></svg><span id="quickT"></span></a></div>
@@ -579,7 +579,7 @@ function parse(l){
 }
 var CFG=links.map(parse);
 
-function appUrl(n){var u=encodeURIComponent(sub),nm=encodeURIComponent("Super JinX");
+function appUrl(n){var u=encodeURIComponent(sub),nm=encodeURIComponent("POMP NET");
  return {V2Box:"v2box://install-sub?url="+u+"&name="+nm,v2rayNG:"v2rayng://install-sub?url="+u+"&name="+nm,Hiddify:"hiddify://import/"+sub+"#"+nm,
   Streisand:"streisand://import/"+sub+"#"+nm,Happ:"happ://add/"+sub,NekoBox:"sn://subscription?url="+u+"&name="+nm}[n]}
 var APPS=[["V2Box","#3b82f6","#1e3a8a","V"],["v2rayNG","#22c55e","#14532d","N"],["Hiddify","#a855f7","#4c1d95","H"],["Streisand","#06b6d4","#164e63","S"],["Happ","#f59e0b","#78350f","Hp"],["NekoBox","#ec4899","#831843","K"]];
@@ -658,7 +658,7 @@ function openSheet(i){cur=i;$("shT").textContent=CFG[i].name;
  if(!drawQr(links[i],$("qrc2"),links[i].length>1100?"L":"M"))return toast(L().copyFail,true);
  $("ov").classList.add("on");$("ov").setAttribute("aria-hidden","false");document.body.classList.add("lock");buzz()}
 function closeSheet(){$("ov").classList.remove("on");$("ov").setAttribute("aria-hidden","true");document.body.classList.remove("lock")}
-function saveQr(){var c=$("qrc2");try{c.toBlob(function(b){if(!b)throw 0;var u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="SuperJinX-QR.png";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);toast(L().saved)},"image/png")}catch(e){try{window.open(c.toDataURL("image/png"),"_blank")}catch(x){}}}
+function saveQr(){var c=$("qrc2");try{c.toBlob(function(b){if(!b)throw 0;var u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="POMP-NET-QR.png";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);toast(L().saved)},"image/png")}catch(e){try{window.open(c.toDataURL("image/png"),"_blank")}catch(x){}}}
 
 /* ---------- events (one listener, no leaks) ---------- */
 document.addEventListener("click",function(e){
@@ -702,6 +702,65 @@ var io=("IntersectionObserver" in window)?new IntersectionObserver(function(es){
 function start(){$("splash").classList.add("out");[].forEach.call(document.querySelectorAll(".rv"),function(el,i){el.style.transitionDelay=Math.min(i,6)*60+"ms";if(io)io.observe(el);else el.classList.add("on")});
  setTimeout(ring,350);setTimeout(runPing,500);setTimeout(function(){$("dock").classList.add("on")},800)}
 if(document.readyState==="complete")setTimeout(start,500);else{var go=false,s1=function(){if(!go){go=true;setTimeout(start,300)}};addEventListener("load",s1);setTimeout(s1,900)}
+})();
+
+/* POMP NET OCEAN NEXUS — procedural login/dashboard atmosphere.
+   Preserves the existing panel actions and API logic. Super JinX source credit remains visible. */
+(function(){
+ "use strict";
+ if(window.__pompWorldStarted)return; window.__pompWorldStarted=true;
+ var scenes=[
+  ["abyss","اقیانوس ژرف"],["volcano","آتشفشان"],["galaxy","کهکشان"],["aurora","شفق قطبی"],
+  ["rainforest","جنگل بارانی"],["ice","کوهستان یخی"],["island","جزیره استوایی"],["storm","طوفان دریایی"],
+  ["meteor","شهاب‌باران"],["underwater","شهر زیر آب"],["desert","غروب کویر"],["nebula","سحابی بنفش"]
+ ];
+ function pick(){
+  var bag=[],last="";
+  try{bag=JSON.parse(localStorage.getItem("pompnet_scene_bag_v1")||"[]");last=localStorage.getItem("pompnet_scene_last_v1")||""}catch(e){}
+  if(!Array.isArray(bag)||!bag.length){
+   bag=scenes.map(function(x){return x[0]}).filter(function(x){return x!==last});
+   for(var i=bag.length-1;i>0;i--){var k=Math.floor(Math.random()*(i+1)),v=bag[i];bag[i]=bag[k];bag[k]=v}
+  }
+  var id=bag.shift()||"abyss",name=(scenes.find(function(x){return x[0]===id})||scenes[0])[1];
+  try{localStorage.setItem("pompnet_scene_bag_v1",JSON.stringify(bag));localStorage.setItem("pompnet_scene_last_v1",id)}catch(e){}
+  return {id:id,name:name};
+ }
+ var scene=pick(),reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+ var cv=document.createElement("canvas");cv.id="pompnet-world-canvas";cv.setAttribute("aria-hidden","true");
+ cv.style.cssText="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.68";
+ var css=document.createElement("style");css.textContent=
+ "html,body{background:#05050b!important}body:before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(3,4,12,.28),rgba(3,4,12,.58))}"+
+ "#pompnet-world-canvas{display:block}body>*:not(#pompnet-world-canvas){position:relative;z-index:1}"+
+ "main,section,aside,[data-sidebar],.card,[class*=card]{border-color:rgba(151,120,255,.2)!important}"+
+ "button,[role=button],a.btn{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important}"+
+ "button:hover,[role=button]:hover,a.btn:hover{box-shadow:0 0 22px rgba(85,105,255,.24),inset 0 1px rgba(255,255,255,.18)!important}"+
+ "button:active,[role=button]:active{transform:scale(.975)}"+
+ ".pompnet-world-badge{position:fixed!important;z-index:9998!important;top:10px;left:10px;display:flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(151,120,255,.38);border-radius:16px;background:rgba(8,8,20,.76);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 8px 28px rgba(0,0,0,.3),0 0 24px rgba(91,78,255,.16);font:800 11px system-ui;color:#f4f1ff;letter-spacing:1.3px;pointer-events:none}"+
+ ".pompnet-world-badge small{display:block;font:500 10px system-ui;color:#a9a5ca;letter-spacing:0;margin-top:2px}"+
+ "@media(max-width:600px){.pompnet-world-badge{top:7px;left:7px;padding:6px 9px;font-size:10px}.pompnet-world-badge small{font-size:9px}}"+
+ "@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}";
+ document.head.appendChild(css);document.body.prepend(cv);
+ var badge=document.createElement("div");badge.className="pompnet-world-badge";
+ badge.innerHTML='<span style="font-size:19px;color:#9e8bff">✦</span><span>POMP NET<small>'+scene.name+' · OCEAN NEXUS</small></span>';
+ document.body.appendChild(badge);
+ var ctx=cv.getContext("2d"),w=0,h=0,dpr=Math.min(1.4,devicePixelRatio||1),t=0,last=0,parts=[];
+ function resize(){w=innerWidth;h=innerHeight;cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);parts=[];for(var i=0;i<95;i++)parts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+.35,v:Math.random()*.65+.12,a:Math.random()*.5+.12,p:Math.random()*6.28})}
+ addEventListener("resize",resize,{passive:true});resize();
+ var palettes={abyss:["#020714","#063c59","#16b9d2"],volcano:["#10060c","#542018","#ff692e"],galaxy:["#07051c","#25104c","#7852d6"],aurora:["#04131b","#064b55","#4ee6c4"],rainforest:["#04120d","#12432e","#62a878"],ice:["#061326","#16436b","#9be8ff"],island:["#03202b","#087c8b","#4de0ce"],storm:["#070b19","#1b3151","#5687b8"],meteor:["#070718","#1e1a50","#8f75ff"],underwater:["#02151e","#034a62","#20d6dc"],desert:["#1a0d18","#7a3440","#ffad65"],nebula:["#09051b","#35145c","#a55cff"]};
+ function frame(now){requestAnimationFrame(frame);if(document.hidden||reduce)return;if(now-last<38)return;last=now;t+=.016;
+  var p=palettes[scene.id]||palettes.abyss,g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,p[0]);g.addColorStop(.62,p[1]);g.addColorStop(1,p[2]);ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+  var glow=ctx.createRadialGradient(w*.72,h*.42,2,w*.72,h*.42,Math.max(w,h)*.7);glow.addColorStop(0,p[2]+"55");glow.addColorStop(1,"transparent");ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
+  if(["abyss","island","storm","underwater"].indexOf(scene.id)>=0){
+   for(var q=0;q<5;q++){ctx.beginPath();for(var x=0;x<=w;x+=12){var y=h*(.62+q*.065)+Math.sin(x*.009+t*(1+q*.13)+q)*9+Math.sin(x*.019-t*.7)*4;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fillStyle=p[2]+(q===0?"35":"18");ctx.fill()}
+  }
+  if(scene.id==="volcano"){ctx.fillStyle="#170d18";ctx.beginPath();ctx.moveTo(w*.18,h);ctx.lineTo(w*.48,h*.34);ctx.lineTo(w*.56,h*.49);ctx.lineTo(w*.67,h);ctx.fill();ctx.strokeStyle="#ff6b35";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(w*.48,h*.35);ctx.lineTo(w*.52,h*.44);ctx.stroke()}
+  if(scene.id==="ice"||scene.id==="desert"){ctx.fillStyle=scene.id==="ice"?"#b4eaff22":"#ffb16b22";ctx.beginPath();ctx.moveTo(0,h);for(var z=0;z<=w;z+=w/8)ctx.lineTo(z,h*(.72+Math.sin(z*.014)*.08));ctx.lineTo(w,h);ctx.fill()}
+  for(var i=0;i<parts.length;i++){var a=parts[i];a.y+=a.v*(scene.id==="rainforest"||scene.id==="storm"?2.8:1);a.x+=scene.id==="storm"?-a.v*.8:Math.sin(t+a.p)*.18;if(a.y>h+5){a.y=-5;a.x=Math.random()*w}ctx.globalAlpha=a.a*(.6+.4*Math.sin(t*2+a.p));ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,6.283);ctx.fillStyle=(scene.id==="volcano"?"#ffb36b":scene.id==="ice"?"#d8f7ff":"#e4e2ff");ctx.fill()}
+  ctx.globalAlpha=1;
+ }
+ if(!reduce)requestAnimationFrame(frame);else{ctx.fillStyle="#080817";ctx.fillRect(0,0,w,h)}
+ document.addEventListener("visibilitychange",function(){if(!document.hidden&&!reduce)requestAnimationFrame(frame)});
+ if(!reduce)requestAnimationFrame(frame);
 })();
 </script>
 {% endraw %}
