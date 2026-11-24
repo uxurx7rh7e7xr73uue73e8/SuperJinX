@@ -499,6 +499,7 @@
  "html,body{background:#05050b!important}body:before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(3,4,12,.28),rgba(3,4,12,.58))}"+
  "#pompnet-world-canvas{display:block}body>*:not(#pompnet-world-canvas){position:relative;z-index:1}"+
  "main,section,aside,[data-sidebar],.card,[class*=card]{border-color:rgba(151,120,255,.2)!important}"+
+ "aside,[data-sidebar],.card,[class*=card]{background-color:rgba(10,9,27,.62)!important;backdrop-filter:blur(18px) saturate(145%);-webkit-backdrop-filter:blur(18px) saturate(145%);box-shadow:inset 0 1px rgba(255,255,255,.07),0 16px 42px rgba(0,0,0,.2)}"+
  "button,[role=button],a.btn{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important}"+
  "button:hover,[role=button]:hover,a.btn:hover{box-shadow:0 0 22px rgba(85,105,255,.24),inset 0 1px rgba(255,255,255,.18)!important}"+
  "button:active,[role=button]:active{transform:scale(.975)}"+
