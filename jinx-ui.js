@@ -468,3 +468,64 @@
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();
+
+
+
+/* POMP NET OCEAN NEXUS — procedural login/dashboard atmosphere.
+   Preserves the existing panel actions and API logic. Super JinX source credit remains visible. */
+(function(){
+ "use strict";
+ if(window.__pompWorldStarted)return; window.__pompWorldStarted=true;
+ var scenes=[
+  ["abyss","اقیانوس ژرف"],["volcano","آتشفشان"],["galaxy","کهکشان"],["aurora","شفق قطبی"],
+  ["rainforest","جنگل بارانی"],["ice","کوهستان یخی"],["island","جزیره استوایی"],["storm","طوفان دریایی"],
+  ["meteor","شهاب‌باران"],["underwater","شهر زیر آب"],["desert","غروب کویر"],["nebula","سحابی بنفش"]
+ ];
+ function pick(){
+  var bag=[],last="";
+  try{bag=JSON.parse(localStorage.getItem("pompnet_scene_bag_v1")||"[]");last=localStorage.getItem("pompnet_scene_last_v1")||""}catch(e){}
+  if(!Array.isArray(bag)||!bag.length){
+   bag=scenes.map(function(x){return x[0]}).filter(function(x){return x!==last});
+   for(var i=bag.length-1;i>0;i--){var k=Math.floor(Math.random()*(i+1)),v=bag[i];bag[i]=bag[k];bag[k]=v}
+  }
+  var id=bag.shift()||"abyss",name=(scenes.find(function(x){return x[0]===id})||scenes[0])[1];
+  try{localStorage.setItem("pompnet_scene_bag_v1",JSON.stringify(bag));localStorage.setItem("pompnet_scene_last_v1",id)}catch(e){}
+  return {id:id,name:name};
+ }
+ var scene=pick(),reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+ var cv=document.createElement("canvas");cv.id="pompnet-world-canvas";cv.setAttribute("aria-hidden","true");
+ cv.style.cssText="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.68";
+ var css=document.createElement("style");css.textContent=
+ "html,body{background:#05050b!important}body:before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(3,4,12,.28),rgba(3,4,12,.58))}"+
+ "#pompnet-world-canvas{display:block}body>*:not(#pompnet-world-canvas){position:relative;z-index:1}"+
+ "main,section,aside,[data-sidebar],.card,[class*=card]{border-color:rgba(151,120,255,.2)!important}"+
+ "button,[role=button],a.btn{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important}"+
+ "button:hover,[role=button]:hover,a.btn:hover{box-shadow:0 0 22px rgba(85,105,255,.24),inset 0 1px rgba(255,255,255,.18)!important}"+
+ "button:active,[role=button]:active{transform:scale(.975)}"+
+ ".pompnet-world-badge{position:fixed!important;z-index:9998!important;top:10px;left:10px;display:flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(151,120,255,.38);border-radius:16px;background:rgba(8,8,20,.76);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 8px 28px rgba(0,0,0,.3),0 0 24px rgba(91,78,255,.16);font:800 11px system-ui;color:#f4f1ff;letter-spacing:1.3px;pointer-events:none}"+
+ ".pompnet-world-badge small{display:block;font:500 10px system-ui;color:#a9a5ca;letter-spacing:0;margin-top:2px}"+
+ "@media(max-width:600px){.pompnet-world-badge{top:7px;left:7px;padding:6px 9px;font-size:10px}.pompnet-world-badge small{font-size:9px}}"+
+ "@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}";
+ document.head.appendChild(css);document.body.prepend(cv);
+ var badge=document.createElement("div");badge.className="pompnet-world-badge";
+ badge.innerHTML='<span style="font-size:19px;color:#9e8bff">✦</span><span>POMP NET<small>'+scene.name+' · OCEAN NEXUS</small></span>';
+ document.body.appendChild(badge);
+ var ctx=cv.getContext("2d"),w=0,h=0,dpr=Math.min(1.4,devicePixelRatio||1),t=0,last=0,parts=[];
+ function resize(){w=innerWidth;h=innerHeight;cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);parts=[];for(var i=0;i<95;i++)parts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+.35,v:Math.random()*.65+.12,a:Math.random()*.5+.12,p:Math.random()*6.28})}
+ addEventListener("resize",resize,{passive:true});resize();
+ var palettes={abyss:["#020714","#063c59","#16b9d2"],volcano:["#10060c","#542018","#ff692e"],galaxy:["#07051c","#25104c","#7852d6"],aurora:["#04131b","#064b55","#4ee6c4"],rainforest:["#04120d","#12432e","#62a878"],ice:["#061326","#16436b","#9be8ff"],island:["#03202b","#087c8b","#4de0ce"],storm:["#070b19","#1b3151","#5687b8"],meteor:["#070718","#1e1a50","#8f75ff"],underwater:["#02151e","#034a62","#20d6dc"],desert:["#1a0d18","#7a3440","#ffad65"],nebula:["#09051b","#35145c","#a55cff"]};
+ function frame(now){requestAnimationFrame(frame);if(document.hidden||reduce)return;if(now-last<38)return;last=now;t+=.016;
+  var p=palettes[scene.id]||palettes.abyss,g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,p[0]);g.addColorStop(.62,p[1]);g.addColorStop(1,p[2]);ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+  var glow=ctx.createRadialGradient(w*.72,h*.42,2,w*.72,h*.42,Math.max(w,h)*.7);glow.addColorStop(0,p[2]+"55");glow.addColorStop(1,"transparent");ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
+  if(["abyss","island","storm","underwater"].indexOf(scene.id)>=0){
+   for(var q=0;q<5;q++){ctx.beginPath();for(var x=0;x<=w;x+=12){var y=h*(.62+q*.065)+Math.sin(x*.009+t*(1+q*.13)+q)*9+Math.sin(x*.019-t*.7)*4;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fillStyle=p[2]+(q===0?"35":"18");ctx.fill()}
+  }
+  if(scene.id==="volcano"){ctx.fillStyle="#170d18";ctx.beginPath();ctx.moveTo(w*.18,h);ctx.lineTo(w*.48,h*.34);ctx.lineTo(w*.56,h*.49);ctx.lineTo(w*.67,h);ctx.fill();ctx.strokeStyle="#ff6b35";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(w*.48,h*.35);ctx.lineTo(w*.52,h*.44);ctx.stroke()}
+  if(scene.id==="ice"||scene.id==="desert"){ctx.fillStyle=scene.id==="ice"?"#b4eaff22":"#ffb16b22";ctx.beginPath();ctx.moveTo(0,h);for(var z=0;z<=w;z+=w/8)ctx.lineTo(z,h*(.72+Math.sin(z*.014)*.08));ctx.lineTo(w,h);ctx.fill()}
+  for(var i=0;i<parts.length;i++){var a=parts[i];a.y+=a.v*(scene.id==="rainforest"||scene.id==="storm"?2.8:1);a.x+=scene.id==="storm"?-a.v*.8:Math.sin(t+a.p)*.18;if(a.y>h+5){a.y=-5;a.x=Math.random()*w}ctx.globalAlpha=a.a*(.6+.4*Math.sin(t*2+a.p));ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,6.283);ctx.fillStyle=(scene.id==="volcano"?"#ffb36b":scene.id==="ice"?"#d8f7ff":"#e4e2ff");ctx.fill()}
+  ctx.globalAlpha=1;
+ }
+ if(!reduce)requestAnimationFrame(frame);else{ctx.fillStyle="#080817";ctx.fillRect(0,0,w,h)}
+ document.addEventListener("visibilitychange",function(){if(!document.hidden&&!reduce)requestAnimationFrame(frame)});
+ if(!reduce)requestAnimationFrame(frame);
+})();
